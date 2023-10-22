@@ -1,3 +1,11 @@
+import Page from "./component/page";
+import Header from "./component/header";
+import Title from "./component/title";
+import Photo from "./component/photo";
+import Price from "./component/price";
+import RoomList from "./component/room-list";
+import Description from "./component/description";
+
 function App() {
   const data = {
     listing_name: "Іст-Сайд Біл",
@@ -144,7 +152,35 @@ function App() {
     ],
   };
 
-  return <div>Hello World</div>;
+  return (
+  <Page>
+    <Header/>
+    <Title
+    title = {data.listing_name}
+    rating = {data.reviews_summary.average_rating}
+    review = {data.reviews_summary.total_reviews}
+    city = {data.location.city}
+    country = {data.location.country}
+    superhost = {data.superhost}
+    />
+
+    <Photo src={data.image} name={data.listing_name}/>
+
+    <Price
+      price = {data.price.original_price}
+      discount={data.price.discounted_price}
+      currency={data.price.currency}
+      clearning={data.price.cleaning_fee}
+      service={data.price.service_fee}
+      chekin={data.availability.checkin_date}
+      checkout={data.availability.checkout_date}
+    />
+
+    <RoomList list={data.roomTypes}/>
+    <Description title="Опис" children={data.description} />
+    <Description title="Про сусідів" children={data.neighborhood_info} />
+  </Page>
+  )
 }
 
 export default App;
