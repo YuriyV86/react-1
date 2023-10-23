@@ -11,6 +11,10 @@
   display: flex;
   gap: 16px;
   flex-direction: column;
+
+  .disabled{
+    text-decoration: line-through;
+  }
 }
 
 .list-item__title{

@@ -1,8 +1,12 @@
-.props__list{
+.amenities__list{
   display: grid;
   gap: 24px;
   padding-top: 24px;
 
   vertical-align: center;
   align-items: flex-start;
+
+  .list-item__content{
+    /* color: red; */
+  }
 }

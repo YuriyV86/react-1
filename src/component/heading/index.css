@@ -2,9 +2,12 @@
   font-size: 32px;
   font-weight: bold;
   color: #000;
+  width: 100%;
 }
 
 .heading--border {
+  display: grid;
+  width: 100%;
   padding-bottom: 8px;
   border-bottom: 1px solid #dee2e6;
 }
